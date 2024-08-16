@@ -63,5 +63,18 @@ const hospitalLogin = async (req,res)=>{
         res.json({success:false,message:err});
     }
 }
+const hospitaldetails=async (req,res)=>{
+    try{
+        const items = await prisma.hospitals.findMany({
+        select:{
+            id:true,
+            name:true
+        }})
+        res.json({success:true,message:items})}
 
-export {hospitalRegister,hospitalLogin}
+        catch(err){
+            console.log(err);
+            res.json({success:false,message:err});
+        }
+    }
+export {hospitalRegister,hospitalLogin,hospitaldetails}

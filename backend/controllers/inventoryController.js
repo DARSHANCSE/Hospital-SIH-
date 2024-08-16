@@ -34,7 +34,7 @@ const add = async(req,res) =>{
     }
 }
 const patientBuys = async(req,res)=>{
-    const {contact,patientName,items} = req.body;
+    const {contact,patientName,items} = req                                                                                                                                                                                                                                                                                                                                                                                                                 .body;
     try{
         let purchased = [];
         let reOrderLevelDecreased = [];
