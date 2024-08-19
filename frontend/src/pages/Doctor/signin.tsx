@@ -43,9 +43,9 @@ export function SigninDoctor() {
 
     // Handle the form submission (e.g., API call)
     try {
-        const res = await axios.post(`${BACKEND_URL}/api/doctor/register`,formData) as {success:boolean,token:string};
+        const res = await axios.post(`${BACKEND_URL}/api/doctor/login`,formData) as {success:boolean,token:string};
         localStorage.setItem("doctortoken",res.token)
-      console.log("Login successful");
+        console.log("Login successful");
     } catch (err: any) {
       // Handle error
       setError(err.message);
@@ -92,3 +92,4 @@ export function SigninDoctor() {
     </div>
   );
 }
+  
